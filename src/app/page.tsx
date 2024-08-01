@@ -1,112 +1,472 @@
+"use client"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Copy } from "lucide-react";
 import Image from "next/image";
 
+
 export default function Home() {
+
+  const handleCopy = (value: string) => {
+    navigator.clipboard.writeText(value).then(
+      () => {
+        console.log("Link copied to clipboard!");
+        // Optionally, display a message or toast to the user
+      },
+      (err) => {
+        console.error("Failed to copy: ", err);
+      }
+    );
+  }
+
+
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div  className="bg-gray-100">
+      
+      <section className="py-10 md:py-16">
+
+<div className="container max-w-screen-xl mx-auto px-4">
+
+    <nav className="flex items-center justify-between mb-40">
+        <Avatar >
+          <AvatarFallback className="">DM</AvatarFallback>
+        </Avatar>
+
+        <a href="Resume.docx" className="px-7 py-3 md:px-9 md:py-4 bg-white font-medium md:font-semibold text-gray-700 text-md rounded-md hover:bg-gray-700 hover:text-white transition ease-linear duration-500">Get my CV</a>
+    </nav>
+
+    <div className="text-center">
+        <div className="flex justify-center mb-16">
+            <Avatar className="w-32 h-32">
+              <AvatarImage asChild  src="image/home-img.jpg" >
+                <Image src='image/home-img.jpg' alt='logo' width={50} height={50}  />
+              </AvatarImage>
+              <AvatarFallback>DM</AvatarFallback>
+            </Avatar>
         </div>
-      </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <h6 className="font-medium text-gray-600 text-lg md:text-2xl uppercase mb-8">Daniel Muniz</h6>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-          </p>
-        </a>
+        <h1 className="font-normal text-gray-900 text-4xl md:text-7xl leading-none mb-8">Senior Software Engineer</h1>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        <p className="font-normal text-gray-600 text-md md:text-xl mb-16">Passionate about developing high-performance architectures in different scenarios.</p>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button variant="outline" className="px-7 py-3 md:px-9 md:py-4 font-medium md:font-semibold bg-gray-700 text-gray-50 text-sm rounded-md hover:bg-gray-50 hover:text-gray-700 transition ease-linear duration-500">Contact</Button>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <DialogTitle>Share link</DialogTitle>
+              <DialogDescription>
+                Anyone who has this link will be able to view this.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="flex items-center space-x-2">
+              <div className="grid flex-1 gap-2">
+                <Label htmlFor="link" className="sr-only">
+                  Link
+                </Label>
+                <Input
+                  id="link"
+                  defaultValue="https://ui.shadcn.com/docs/installation"
+                  readOnly
+                />
+              </div>
+              <Button type="submit" size="sm" className="px-3"  onClick={() => handleCopy("afsdhiuasdfh")}>
+                <span className="sr-only">Copy</span>
+                <Copy className="h-4 w-4" />
+              </Button>
+            </div>
+            <DialogFooter className="sm:justify-start">
+              <DialogClose asChild>
+                <Button type="button" variant="secondary">
+                  Close
+                </Button>
+              </DialogClose>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+    </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+</div>
+
+</section>
+
+<section className="py-10 md:py-16">
+
+<div className="container max-w-screen-xl mx-auto px-4">
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="bg-gray-50 px-8 py-10 rounded-md">
+            <div className="w-20 py-6 flex justify-center bg-gray-100 rounded-md mb-4">
+                <i data-feather="activity"></i>
+            </div>
+
+            <h4 className="font-medium text-gray-700 text-lg mb-4">High experience</h4>
+
+            <p className="font-normal text-gray-500 text-md">Lorem ipsum dolor sit amet, consectetur <br/> adipiscing elit, sed do eiusmod tempor <br/> incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        
+        <div className="bg-gray-50 px-8 py-10 rounded-md">
+            <div className="w-20 py-6 flex justify-center bg-gray-100 rounded-md mb-4">
+                <i data-feather="codesandbox"></i>
+            </div>
+
+            <h4 className="font-medium text-gray-700 text-lg mb-4">Useful sandboxes</h4>
+
+            <p className="font-normal text-gray-500 text-md">Lorem ipsum dolor sit amet, consectetur <br/> adipiscing elit, sed do eiusmod tempor <br/> incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        
+        <div className="bg-gray-50 px-8 py-10 rounded-md">
+            <div className="w-20 py-6 flex justify-center bg-gray-100 rounded-md mb-4">
+                <i data-feather="coffee"></i>
+            </div>
+
+            <h4 className="font-medium text-gray-700 text-lg mb-4">Success side projects</h4>
+
+            <p className="font-normal text-gray-500 text-md">Lorem ipsum dolor sit amet, consectetur <br/> adipiscing elit, sed do eiusmod tempor <br/> incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+<section className="py-10 md:py-16">
+
+<div className="container max-w-screen-xl mx-auto px-4">
+
+    <div className="flex flex-col lg:flex-row justify-between">
+        <div className="mb-10 lg:mb-0">
+            <h1 className="font-medium text-gray-700 text-3xl md:text-4xl mb-5">Portfolio</h1>
+
+            <p className="font-normal text-gray-500 text-xs md:text-base">I have brought here my biggest and favorite works <br/> as a professional.</p>
+        </div>
+
+        <div className="space-y-24">
+            <div className="flex space-x-6">
+                <h1 className="font-normal text-gray-700 text-3xl md:text-4xl">01</h1>
+
+                <span className="w-28 h-0.5 bg-gray-300 mt-5"></span>
+
+                <div>
+                    <h1 className="font-normal text-gray-700 text-3xl md:text-4xl mb-5">Demo API Generator</h1>
+
+                    <p className="font-normal text-gray-500 text-sm md:text-base">A dummy data free and documented API generator to facilitate <br/> the process of testing the front-end portion of projects.</p>
+                </div>
+            </div>
+            
+            <div className="flex space-x-6">
+                <h1 className="font-normal text-gray-700 text-3xl md:text-4xl">02</h1>
+
+                <span className="w-28 h-0.5 bg-gray-300 mt-5"></span>
+
+                <div>
+                    <h1 className="font-normal text-gray-700 text-3xl md:text-4xl mb-5">Demo API Generator</h1>
+
+                    <p className="font-normal text-gray-500 text-sm md:text-base">A dummy data free and documented API generator to facilitate <br/> the process of testing the front-end portion of projects.</p>
+                </div>
+            </div>
+            
+            <div className="flex space-x-6">
+                <h1 className="font-normal text-gray-700 text-3xl md:text-4xl">03</h1>
+
+                <span className="w-28 h-0.5 bg-gray-300 mt-5"></span>
+
+                <div>
+                    <h1 className="font-normal text-gray-700 text-3xl md:text-4xl mb-5">Demo API Generator</h1>
+
+                    <p className="font-normal text-gray-500 text-sm md:text-base">A dummy data free and documented API generator to facilitate <br/> the process of testing the front-end portion of projects.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+<section className="py-10 md:py-16">
+
+<div className="container max-w-screen-xl mx-auto px-4">
+
+    <h1 className="font-medium text-gray-700 text-3xl md:text-4xl mb-5">Education</h1>
+
+    <p className="font-normal text-gray-500 text-xs md:text-base mb-20">Below is a summary of the places I studied</p>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="bg-gray-50 px-8 py-10 rounded-md">
+            <h4 className="font-medium text-gray-700 text-lg mb-4">2015 – 2016</h4>
+
+            <p className="font-normal text-gray-500 text-md mb-4">Lorem ipsum dolor sit amet, consectetur <br/> adipiscing elit, sed do eiusmod tempor <br/> incididunt ut labore et dolore magna aliqua.</p>
+
+            <div className="relative">
+                <h6 className="font-semibold text-gray-500 text-md relative z-10">See the place here</h6>
+                <span className="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
+            </div>
+        </div>
+
+        <div className="bg-gray-50 px-8 py-10 rounded-md">
+            <h4 className="font-medium text-gray-700 text-lg mb-4">2015 – 2016</h4>
+
+            <p className="font-normal text-gray-500 text-md mb-4">Lorem ipsum dolor sit amet, consectetur <br/> adipiscing elit, sed do eiusmod tempor <br/> incididunt ut labore et dolore magna aliqua.</p>
+
+            <div className="relative">
+                <h6 className="font-semibold text-gray-500 text-md relative z-10">See the place here</h6>
+                <span className="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
+            </div>
+        </div>
+
+        <div className="bg-gray-50 px-8 py-10 rounded-md">
+            <h4 className="font-medium text-gray-700 text-lg mb-4">2015 – 2016</h4>
+
+            <p className="font-normal text-gray-500 text-md mb-4">Lorem ipsum dolor sit amet, consectetur <br/> adipiscing elit, sed do eiusmod tempor <br/> incididunt ut labore et dolore magna aliqua.</p>
+
+            <div className="relative">
+                <h6 className="font-semibold text-gray-500 text-md relative z-10">See the place here</h6>
+                <span className="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
+            </div>
+        </div>
+
+        <div className="bg-gray-50 px-8 py-10 rounded-md">
+            <h4 className="font-medium text-gray-700 text-lg mb-4">2015 – 2016</h4>
+
+            <p className="font-normal text-gray-500 text-md mb-4">Lorem ipsum dolor sit amet, consectetur <br/> adipiscing elit, sed do eiusmod tempor <br/> incididunt ut labore et dolore magna aliqua.</p>
+
+            <div className="relative">
+                <h6 className="font-semibold text-gray-500 text-md relative z-10">See the place here</h6>
+                <span className="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
+            </div>
+        </div>
+
+        <div className="bg-gray-50 px-8 py-10 rounded-md">
+            <h4 className="font-medium text-gray-700 text-lg mb-4">2015 – 2016</h4>
+
+            <p className="font-normal text-gray-500 text-md mb-4">Lorem ipsum dolor sit amet, consectetur <br/> adipiscing elit, sed do eiusmod tempor <br/> incididunt ut labore et dolore magna aliqua.</p>
+
+            <div className="relative">
+                <h6 className="font-semibold text-gray-500 text-md relative z-10">See the place here</h6>
+                <span className="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
+            </div>
+        </div>
+
+        <div className="bg-gray-50 px-8 py-10 rounded-md">
+            <h4 className="font-medium text-gray-700 text-lg mb-4">2015 – 2016</h4>
+
+            <p className="font-normal text-gray-500 text-md mb-4">Lorem ipsum dolor sit amet, consectetur <br/> adipiscing elit, sed do eiusmod tempor <br/> incididunt ut labore et dolore magna aliqua.</p>
+
+            <div className="relative">
+                <h6 className="font-semibold text-gray-500 text-md relative z-10">See the place here</h6>
+                <span className="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+<section className="py-10 md:py-16">
+
+<div className="container max-w-screen-xl mx-auto px-4">
+
+    <div className="text-center">
+        <h1 className="font-normal text-gray-300 text-3xl md:text-6xl lg:text-7xl mb-20 md:mb-32 lg:mb-48">Please do not measure your skills in <br/> percentages!</h1>
+
+        <p className="font-medium text-gray-700 text-xs md:text-base">In my many years of experience, I use @laravel for backend projects and @vuejs for <br/> front-end projects. I’m an avid programmer, so I create designs based on the <br/> weekend @figmadesign.</p>
+    </div>
+
+</div>
+
+</section>
+
+<section className="py-10 md:py-16">
+
+<div className="container max-w-screen-xl mx-auto px-4">
+
+    <h1 className="font-medium text-gray-700 text-3xl md:text-4xl mb-5">Experience</h1>
+
+    <p className="font-normal text-gray-500 text-xs md:text-base mb-20">Below is a summary of the places I studied</p>
+
+    <div className="flex flex-col lg:flex-row justify-between">
+        <div className="space-y-8 md:space-y-16 mb-16 md:mb-0">
+            <h6 className="font-medium text-gray-400 text-base uppercase">Company</h6>
+
+            <p className="font-semibold text-gray-600 text-base">Massa Fames <span className="font-normal text-gray-300">/ New York</span></p>
+
+            <p className="font-semibold text-gray-600 text-base">Massa Fames <span className="font-normal text-gray-300">/ New York</span></p>
+
+            <p className="font-semibold text-gray-600 text-base">Massa Fames <span className="font-normal text-gray-300">/ New York</span></p>
+
+            <p className="font-semibold text-gray-600 text-base">Massa Fames <span className="font-normal text-gray-300">/ New York</span></p>
+
+            <p className="font-semibold text-gray-600 text-base">Massa Fames <span className="font-normal text-gray-300">/ New York</span></p>
+        </div>
+
+        <div className="space-y-8 md:space-y-16 mb-16 md:mb-0">
+            <h6 className="font-medium text-gray-400 text-base uppercase">Position</h6>
+
+            <p className="font-normal text-gray-400 text-base">Junior Front-End Developer</p>
+
+            <p className="font-normal text-gray-400 text-base">Junior Front-End Developer</p>
+
+            <p className="font-normal text-gray-400 text-base">Junior Front-End Developer</p>
+
+            <p className="font-normal text-gray-400 text-base">Junior Front-End Developer</p>
+
+            <p className="font-normal text-gray-400 text-base">Junior Front-End Developer</p>
+        </div>
+
+        <div className="space-y-8 md:space-y-16">
+            <h6 className="font-medium text-gray-400 text-base uppercase">Year</h6>
+
+            <p className="font-normal text-gray-400 text-base">2016</p>
+
+            <p className="font-normal text-gray-400 text-base">2016</p>
+
+            <p className="font-normal text-gray-400 text-base">2016</p>
+
+            <p className="font-normal text-gray-400 text-base">2016</p>
+
+            <p className="font-normal text-gray-400 text-base">2016</p>
+        </div>
+    </div>
+    
+</div>
+
+</section>
+
+<section className="py-10 md:py-16">
+
+<div className="container max-w-screen-xl mx-auto px-4">
+
+    <h1 className="font-medium text-gray-700 text-3xl md:text-4xl mb-5">Brands</h1>
+
+    <p className="font-normal text-gray-500 text-xs md:text-base mb-10 md:mb-20">Below is a summary of the places I studied</p>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <img src="image/brand-1.png" alt="Image"/>
+
+        <img src="image/brand-2.png" alt="Image"/>
+
+        <img src="image/brand-3.png" alt="Image"/>
+
+        <img src="image/brand-4.png" alt="Image"/>
+
+        <img src="image/brand-5.png" alt="Image"/>
+
+        <img src="image/brand-6.png" alt="Image"/>
+    </div>
+
+</div>
+
+</section>
+
+<section className="py-10 md:py-16">
+
+<div className="container max-w-screen-xl mx-auto px-4">
+
+    <h1 className="font-medium text-gray-700 text-3xl md:text-4xl mb-5">Testimonial</h1>
+
+    <p className="font-normal text-gray-500 text-xs md:text-base mb-10 md:mb-20">Below is a summary of the places I studied</p>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="bg-gray-50 px-8 py-10 rounded-md">
+
+            <p className="font-normal text-gray-500 text-md mb-4">Lorem ipsum dolor sit amet, consectetur</p> <br/> <p className="font-normal text-gray-500 text-md mb-4">adipiscing elit, sed do eiusmod tempor <br/> incididunt ut labore et dolore magna aliqua.</p>
+
+            <h6 className="font-semibold text-gray-500 text-md">Stephan Clark <span className="font-medium text-gray-300 text-sm">- CEO at EarlyBird</span></h6>
+        </div>
+
+        <div className="bg-gray-50 px-8 py-10 rounded-md">
+
+            <p className="font-normal text-gray-500 text-md mb-4">Lorem ipsum dolor sit amet, consectetur <br/> adipiscing elit, sed do eiusmod tempor <br/> incididunt ut labore et dolore magna aliqua.</p>
+
+            <h6 className="font-semibold text-gray-500 text-md">Stephan Clark <span className="font-medium text-gray-300 text-sm">- CEO at EarlyBird</span></h6>
+        </div>
+
+        <div className="bg-gray-50 px-8 py-10 rounded-md">
+
+            <p className="font-normal text-gray-500 text-md mb-4">Lorem ipsum dolor sit amet, consectetur <br/> adipiscing elit, sed do eiusmod tempor <br/> incididunt ut labore et dolore magna aliqua.</p>
+
+            <h6 className="font-semibold text-gray-500 text-md">Stephan Clark <span className="font-medium text-gray-300 text-sm">- CEO at EarlyBird</span></h6>
+        </div>
+
+        <div className="bg-gray-50 px-8 py-10 rounded-md">
+
+            <p className="font-normal text-gray-500 text-md mb-4">Lorem ipsum dolor sit amet, consectetur <br/> adipiscing elit, sed do eiusmod tempor <br/> incididunt ut labore et dolore magna aliqua.</p>
+
+            <h6 className="font-semibold text-gray-500 text-md">Stephan Clark <span className="font-medium text-gray-300 text-sm">- CEO at EarlyBird</span></h6>
+        </div>
+
+        <div className="bg-gray-50 px-8 py-10 rounded-md">
+
+            <p className="font-normal text-gray-500 text-md mb-4">Lorem ipsum dolor sit amet, consectetur <br/> adipiscing elit, sed do eiusmod tempor <br/> incididunt ut labore et dolore magna aliqua.</p>
+
+            <h6 className="font-semibold text-gray-500 text-md">Stephan Clark <span className="font-medium text-gray-300 text-sm">- CEO at EarlyBird</span></h6>
+        </div>
+
+        <div className="bg-gray-50 px-8 py-10 rounded-md">
+
+            <p className="font-normal text-gray-500 text-md mb-4">Lorem ipsum dolor sit amet, consectetur <br/> adipiscing elit, sed do eiusmod tempor <br/> incididunt ut labore et dolore magna aliqua.</p>
+
+            <h6 className="font-semibold text-gray-500 text-md">Stephan Clark <span className="font-medium text-gray-300 text-sm">- CEO at EarlyBird</span></h6>
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+<footer className="py-10 md:py-16 mb-20 md:mb-40 lg::mb-52">
+
+<div className="container max-w-screen-xl mx-auto px-4">
+
+    <div className="text-center">
+        <h1 className="font-medium text-gray-700 text-4xl md:text-5xl mb-5">Testimonial</h1>
+
+        <p className="font-normal text-gray-400 text-md md:text-lg mb-20">I’m not currently taking on new client work but feel free to contact me for any <br/> other inquiries.</p>
+
+        <div className="flex items-center justify-center space-x-8">
+            <a href="#" className="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
+                <i data-feather="twitter" className="text-gray-500 hover:text-gray-800 transition ease-in-out duration-500"></i>
+            </a>
+
+            <a href="#" className="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
+                <i data-feather="dribbble" className="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500"></i>
+            </a>
+
+            <a href="#" className="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
+                <i data-feather="facebook" className="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500"></i>
+            </a>
+
+            <a href="#" className="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
+                <i data-feather="codepen" className="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500"></i>
+            </a>
+
+            <a href="#" className="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
+                <i data-feather="at-sign" className="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500"></i>
+            </a>
+
+            <a href="#" className="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
+                <i data-feather="instagram" className="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500"></i>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+</footer>
+
+
+<script>
+feather.replace()
+</script>
+    </div>
   );
 }

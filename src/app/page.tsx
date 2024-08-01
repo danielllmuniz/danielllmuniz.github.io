@@ -61,26 +61,67 @@ export default function Home() {
           </DialogTrigger>
           <DialogContent className="sm:max-w-md">
             <DialogHeader>
-              <DialogTitle>Share link</DialogTitle>
+              <DialogTitle>Contact</DialogTitle>
               <DialogDescription>
-                Anyone who has this link will be able to view this.
+                Here you can get my contact informations
               </DialogDescription>
             </DialogHeader>
             <div className="flex items-center space-x-2">
               <div className="grid flex-1 gap-2">
-                <Label htmlFor="link" className="sr-only">
-                  Link
+                <Label htmlFor="link">
+                  Email
                 </Label>
+                <div className="flex gap-1">
                 <Input
                   id="link"
-                  defaultValue="https://ui.shadcn.com/docs/installation"
+                  defaultValue="munidaniel@gmail.com"
                   readOnly
                 />
+                <Button type="submit" size="sm" className="px-3"  onClick={() => handleCopy("munidaniel@gmail.com")}>
+                  <span className="sr-only">Copy</span>
+                  <Copy className="h-4 w-4" />
+                </Button>
+                </div>
               </div>
-              <Button type="submit" size="sm" className="px-3"  onClick={() => handleCopy("afsdhiuasdfh")}>
-                <span className="sr-only">Copy</span>
-                <Copy className="h-4 w-4" />
-              </Button>
+            </div>
+            <div className="flex items-center space-x-2">
+              <div className="grid flex-1 gap-2">
+                <Label htmlFor="link">
+                  Phone
+                </Label>
+                <div className="flex gap-1">
+                <Input
+                  id="link"
+                  defaultValue="+55 24 99866 2858"
+                  readOnly
+                />
+                <Button type="submit" size="sm" className="px-3"  onClick={() => handleCopy("+55 24 99866 2858")}>
+                  <span className="sr-only">Copy</span>
+                  <Copy className="h-4 w-4" />
+                </Button>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center space-x-2">
+              <div className="grid flex-1 gap-2">
+                <div className="flex gap-1">
+                <Label htmlFor="link">
+                  Whatsapp
+                </Label>
+                <span className="text-sm text-blue-500"><a target="_blank" href="https://wa.me/5524998662858">Link</a></span>
+                </div>
+                <div className="flex gap-1">
+                <Input
+                  id="link"
+                  defaultValue="https://wa.me/5524998662858"
+                  readOnly
+                />
+                <Button type="submit" size="sm" className="px-3"  onClick={() => handleCopy("+55 24 99866 2858")}>
+                  <span className="sr-only">Copy</span>
+                  <Copy className="h-4 w-4" />
+                </Button>
+                </div>
+              </div>
             </div>
             <DialogFooter className="sm:justify-start">
               <DialogClose asChild>
@@ -107,7 +148,7 @@ export default function Home() {
                 <i data-feather="activity"></i>
             </div>
 
-            <h4 className="font-medium text-gray-700 text-lg mb-4">High experience</h4>
+            <h4 className="font-medium text-gray-700 text-lg mb-4">Backend</h4>
 
             <p className="font-normal text-gray-500 text-md">Lorem ipsum dolor sit amet, consectetur <br/> adipiscing elit, sed do eiusmod tempor <br/> incididunt ut labore et dolore magna aliqua.</p>
         </div>
@@ -117,7 +158,7 @@ export default function Home() {
                 <i data-feather="codesandbox"></i>
             </div>
 
-            <h4 className="font-medium text-gray-700 text-lg mb-4">Useful sandboxes</h4>
+            <h4 className="font-medium text-gray-700 text-lg mb-4">Frontend</h4>
 
             <p className="font-normal text-gray-500 text-md">Lorem ipsum dolor sit amet, consectetur <br/> adipiscing elit, sed do eiusmod tempor <br/> incididunt ut labore et dolore magna aliqua.</p>
         </div>
@@ -127,7 +168,7 @@ export default function Home() {
                 <i data-feather="coffee"></i>
             </div>
 
-            <h4 className="font-medium text-gray-700 text-lg mb-4">Success side projects</h4>
+            <h4 className="font-medium text-gray-700 text-lg mb-4">Deployment</h4>
 
             <p className="font-normal text-gray-500 text-md">Lorem ipsum dolor sit amet, consectetur <br/> adipiscing elit, sed do eiusmod tempor <br/> incididunt ut labore et dolore magna aliqua.</p>
         </div>

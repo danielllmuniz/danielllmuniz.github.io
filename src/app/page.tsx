@@ -384,7 +384,7 @@ It is also worth mentioning that its first application was at Heathrow Airport, 
 </div>
 
 </section>
-
+{/* 
 <section className="py-10 md:py-16">
 
 <div className="container max-w-screen-xl mx-auto px-4">
@@ -409,7 +409,7 @@ It is also worth mentioning that its first application was at Heathrow Airport, 
 
 </div>
 
-</section>
+</section> */}
 
 <section className="py-10 md:py-16">
 

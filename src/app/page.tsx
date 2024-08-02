@@ -313,10 +313,10 @@ export default function Home() {
 
 </section>
 
-<section className="py-10 md:py-16">
+{/* <section className="py-10 md:py-16"> */}
 
 
-
+{/* 
 </section>
 
 <section className="py-10 md:py-16">
@@ -373,7 +373,7 @@ export default function Home() {
     
 </div>
 
-</section>
+</section> */}
 {/* 
 <section className="py-10 md:py-16">
 
@@ -400,7 +400,7 @@ export default function Home() {
 </div>
 
 </section> */}
-
+{/* 
 <section className="py-10 md:py-16">
 
 <div className="container max-w-screen-xl mx-auto px-4">
@@ -455,8 +455,8 @@ export default function Home() {
 
 </div>
 
-</section>
-
+</section> */}
+{/* 
 <footer className="py-10 md:py-16 mb-20 md:mb-40 lg::mb-52">
 
 <div className="container max-w-screen-xl mx-auto px-4">
@@ -495,7 +495,7 @@ export default function Home() {
 
 </div>
 
-</footer>
+</footer> */}
 
 
 <script>

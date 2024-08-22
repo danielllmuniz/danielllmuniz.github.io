@@ -2,12 +2,12 @@
 
 const isProd = process.env.NODE_ENV === 'production'
 const nextConfig = {
-  basePath: isProd ? '/danielllmuniz.github.io/' : '',
+  basePath: isProd ? '/danielllmuniz.github.io' : '',
   output: 'export',
   distDir: 'dist',
   images: {
-    unoptimized: true
-  }
-};
+    unoptimized: true,
+  },
+}
 
-export default nextConfig;
+export default nextConfig

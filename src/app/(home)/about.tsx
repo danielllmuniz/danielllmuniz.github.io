@@ -22,8 +22,8 @@ export default function About() {
               architectural patterns, such as microservices or monolithic
               architectures, to suit the project's needs. I ensure a clear
               separation of concerns, employing best practices in
-              modularization, and leveraging design patterns like MVC,
-              repository pattern, and CQRS for optimal performance. My expertise
+              modularization, and leveraging design patterns like MVC or
+              repository pattern for optimal performance. My expertise
               extends to integrating various technologies and frameworks,
               ensuring smooth communication between components, and maintaining
               a focus on security and performance throughout the architecture. I
